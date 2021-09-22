@@ -2,7 +2,11 @@ import http from 'http';
 import path from 'path';
 import fs from 'fs';
 
+// This is the filesystem location at the root of the files you want to
+// navigate/serve.
 const browseRoot = '.';
+// This is the HTTP root where the files can be securely accessed from
+// localhost, ie the nginx endpoint for the static files.
 const fileRoot = 'https://iobio.nhgri.nih.gov/udpdata';
 const port = 3000;
 
