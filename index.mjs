@@ -2,7 +2,7 @@ import http from 'http';
 import path from 'path';
 import fs from 'fs';
 
-const browseRoot = '..';
+const browseRoot = '.';
 const fileRoot = 'https://iobio.nhgri.nih.gov/udpdata';
 const port = 3000;
 
@@ -31,7 +31,7 @@ http.createServer(async (req, res) => {
     const stats = await fs.promises.stat(itemPath);
 
     if (stats.isDirectory()) {
-      const linkPath = reqPath + '/' + filename;
+      const linkPath = reqPath + '/' + filename + '/';
       const link = `
         <a class='directory-item' href='${linkPath}'>${filename}/<a>
       `;
